@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="NightrunSuite">
+    <test name="Nightrun">
+        <classes>
+            <class name="com.testng.suits.Sample3">
+                <methods>
+                    <include name="TC_5"/>
+                </methods>
+            </class>
+            <class name="com.testng.suits.Sample2">
+                <methods>
+                    <include name="TC_4"/>
+                </methods>
+            </class>
+            <class name="com.testng.suits.Sample1">
+                <methods>
+                    <include name="TC_1"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
