@@ -23,7 +23,7 @@ import org.w3c.dom.Element;
 public class writer {
 
 	// Output File Path
-	private static final String xmlFilePath = ".C:\\Users\\Aarya\\.jenkins\\workspace\\my-first-pipeline\\Aarya81222.xml";
+	private static final String xmlFilePath = "C:\\Users\\Aarya\\.jenkins\\workspace\\my-first-pipeline\\Aarya81222.xml";
 	// Input file path
 	private static final String inputFilePath = "C:\\Users\\Aarya\\.jenkins\\workspace\\my-first-pipeline\\methods.txt";
 	// Folder path to lookup for tests
