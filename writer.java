@@ -121,7 +121,7 @@ public class writer {
 		}
 
 		Date date = new Date();
-		SimpleDateFormat formatter = new SimpleDateFormat("ddMMyyyy");
+		SimpleDateFormat formatter = new SimpleDateFormat("ddMMyyyyhhmm");
 		String strDate = formatter.format(date);
 
 		// create the xml file
