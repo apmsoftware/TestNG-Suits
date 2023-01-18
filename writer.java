@@ -23,17 +23,18 @@ import org.w3c.dom.DocumentType;
 import org.w3c.dom.Element;
 
 public class writer {
+	// JENKINS Workspace parth
+	private static final String JenkinsPath = ".";
 
 	// Output File Path
-	private static final String xmlFilePath = "C:\\Users\\Aarya\\.jenkins\\workspace\\my-first-pipeline";
+	private static final String xmlFilePath = JenkinsPath;
 	// Input file path
-	private static final String inputFilePath = "C:\\Users\\Aarya\\.jenkins\\workspace\\my-first-pipeline\\methods.txt";
+	private static final String inputFilePath = JenkinsPath + "\\methods.txt";
 	// Folder path to lookup for tests
-	private static final String lookupFolderPath = "C:\\Users\\Aarya\\.jenkins\\workspace\\my-first-pipeline\\src\\com\\testng/suits";
-	
+	private static final String lookupFolderPath = JenkinsPath + "\\src\\com\\testng/suits";
+
 	private static final String suiteNamePlaceholder = "NightrunSuite";
 	private static final String testNamePlaceholder = "Nightrun";
-
 
 	static ArrayList<String> methodNames = new ArrayList<String>();
 	static HashMap<String, ArrayList<String>> map = new HashMap<>();
@@ -119,9 +120,9 @@ public class writer {
 			}
 		}
 
-		Date date = new Date();  
-    	SimpleDateFormat formatter = new SimpleDateFormat("ddMMyyyy");  
-    	String strDate = formatter.format(date); 
+		Date date = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("ddMMyyyy");
+		String strDate = formatter.format(date);
 
 		// create the xml file
 		// transform the DOM Object to an XML File
@@ -130,7 +131,7 @@ public class writer {
 		transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, doctype.getSystemId());
 		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 		DOMSource domSource = new DOMSource(document);
-		StreamResult streamResult = new StreamResult(new File(xmlFilePath+"\\"+"Aarya_"+strDate+".xml"));
+		StreamResult streamResult = new StreamResult(new File(xmlFilePath + "\\" + "Aarya_" + strDate + ".xml"));
 
 		// If you use
 		// StreamResult result = new StreamResult(System.out);
@@ -145,7 +146,7 @@ public class writer {
 	private static void SearchFileContents() {
 		File directoryPath = new File(lookupFolderPath);
 		String contents[] = directoryPath.list();
-		
+
 		for (int i = 0; i < contents.length; i++) {
 			if (contents[i].contains(".java")) {
 
@@ -164,7 +165,7 @@ public class writer {
 						}
 
 						for (String method : methodNames) {
-							if (line.contains("public void "+method+"()")) {
+							if (line.contains("public void " + method + "()")) {
 								System.out.println(line);
 
 								if (map.containsKey(file)) {
