@@ -23,11 +23,11 @@ import org.w3c.dom.Element;
 public class writer {
 
 	// Output File Path
-	private static final String xmlFilePath = "./TestNG-Suits/Aarya81222.xml";
+	private static final String xmlFilePath = ".C:\\Users\\Aarya\\.jenkins\\workspace\\my-first-pipeline\\Aarya81222.xml";
 	// Input file path
-	private static final String inputFilePath = "./TestNG-Suits/methods.txt";
+	private static final String inputFilePath = "C:\\Users\\Aarya\\.jenkins\\workspace\\my-first-pipeline\\methods.txt";
 	// Folder path to lookup for tests
-	private static final String lookupFolderPath = "./TestNG-Suits/src/com/testng/suits";
+	private static final String lookupFolderPath = "C:\\Users\\Aarya\\.jenkins\\workspace\\my-first-pipeline\\src\\com\\testng/suits";
 	
 	private static final String suiteNamePlaceholder = "NightrunSuite";
 	private static final String testNamePlaceholder = "Nightrun";
