@@ -1,6 +1,8 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -23,7 +25,7 @@ import org.w3c.dom.Element;
 public class writer {
 
 	// Output File Path
-	private static final String xmlFilePath = "C:\\Users\\Aarya\\.jenkins\\workspace\\my-first-pipeline\\Aarya81222.xml";
+	private static final String xmlFilePath = "C:\\Users\\Aarya\\.jenkins\\workspace\\my-first-pipeline";
 	// Input file path
 	private static final String inputFilePath = "C:\\Users\\Aarya\\.jenkins\\workspace\\my-first-pipeline\\methods.txt";
 	// Folder path to lookup for tests
@@ -117,6 +119,10 @@ public class writer {
 			}
 		}
 
+		Date date = new Date();  
+    	SimpleDateFormat formatter = new SimpleDateFormat("ddMMyyyy");  
+    	String strDate = formatter.format(date); 
+
 		// create the xml file
 		// transform the DOM Object to an XML File
 		TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -124,7 +130,7 @@ public class writer {
 		transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, doctype.getSystemId());
 		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 		DOMSource domSource = new DOMSource(document);
-		StreamResult streamResult = new StreamResult(new File(xmlFilePath));
+		StreamResult streamResult = new StreamResult(new File(xmlFilePath+"\\"+"Aarya_"+strDate+".xml"));
 
 		// If you use
 		// StreamResult result = new StreamResult(System.out);
